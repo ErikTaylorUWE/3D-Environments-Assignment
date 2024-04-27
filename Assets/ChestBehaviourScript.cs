@@ -6,6 +6,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     
     public Animator animator;
+    public AudioClip chestOpen;
+    public AudioClip chestClose;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
             //play animation
             animator.ResetTrigger("Close");
             animator.SetTrigger("Open");
+            gameObject.GetComponent<AudioSource>().PlayOneShot(chestOpen);
         }
 
     }
@@ -36,6 +39,7 @@ public class NewBehaviourScript : MonoBehaviour
             //play animation
             animator.ResetTrigger("Open");
             animator.SetTrigger("Close");
+            gameObject.GetComponent<AudioSource>().PlayOneShot(chestClose);
         }
     }
 }
